@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/nav_Home"
+        android:icon="@drawable/ico_home"
+        android:title="Trang chủ"
+        tools:ignore="HardcodedText" />
+
+    <group>
+        <item android:title="Quản lý"
+            tools:ignore="HardcodedText">
+            <menu>
+
+                <item
+                    android:id="@+id/nav_qlsp"
+                    android:icon="@drawable/ico_qlsp"
+                    android:title="Quản lý sản phẩm"/>
+                <item
+                    android:id="@+id/nav_qlhd"
+                    android:icon="@drawable/ico_qlhd"
+                    android:title="Quản lý thanh toán"/>
+                <item
+                    android:id="@+id/nav_qlkh"
+                    android:icon="@drawable/ico_qlban"
+                    android:title="Quản lý khách hàng"/>
+
+            </menu>
+        </item>
+    </group>
+
+<!--    <group>-->
+<!--        <item android:title="Phân tích"-->
+<!--            tools:ignore="HardcodedText">-->
+<!--            <menu>-->
+<!--                <item-->
+<!--                    android:id="@+id/nav_thongke"-->
+<!--                    android:icon="@drawable/ico_tke"-->
+<!--                    android:title="Phân tích thống kê"/>-->
+<!--            </menu>-->
+<!--        </item>-->
+<!--    </group>-->
+
+    <group>
+        <item android:title="Cài đặt"
+            tools:ignore="HardcodedText">
+            <menu>
+                <item
+                    android:id="@+id/nav_changePass"
+                    android:icon="@drawable/ico_cpass"
+                    android:title="Đổi mật khẩu"/>
+                <item
+                    android:id="@+id/nav_Logout"
+                    android:icon="@drawable/ico_logout"
+                    android:title="Đăng xuất"/>
+            </menu>
+        </item>
+    </group>
+
+</menu>

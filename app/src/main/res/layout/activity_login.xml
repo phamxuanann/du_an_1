@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical"
+    android:id="@+id/layoutLogin"
+    tools:context=".activity.ActivityLogin">
+
+    <ImageView
+        android:id="@+id/img_BackFromLogin"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:src="@drawable/ico_back"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="20dp"
+        android:padding="15dp"
+        android:elevation="20dp"
+        tools:ignore="ContentDescription"
+        android:background="@drawable/btn_back"
+        />
+
+    <ImageView
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:src="@drawable/img"
+        tools:ignore="ImageContrastCheck"
+        android:importantForAccessibility="no"
+        android:layout_gravity="center"
+        />
+
+    <EditText
+        android:id="@+id/edt_Username"
+        android:layout_width="match_parent"
+        android:layout_height="55dp"
+        android:layout_marginStart="15dp"
+        android:layout_marginEnd="15dp"
+        android:layout_marginTop="15dp"
+        android:paddingStart="13dp"
+        android:hint="Tên đăng nhập"
+        android:drawableStart="@drawable/ico_user"
+        android:drawablePadding="10dp"
+        android:maxLines="1"
+        android:textColor="@color/black"
+        android:background="@drawable/btn_olive"
+        android:inputType="textPersonName"
+        android:elevation="20dp"
+        android:autofillHints="username" />
+
+    <EditText
+        android:id="@+id/edt_Password"
+        android:layout_width="match_parent"
+        android:layout_height="55dp"
+        android:layout_marginStart="15dp"
+        android:layout_marginEnd="15dp"
+        android:layout_marginTop="15dp"
+        android:paddingStart="13dp"
+        android:drawableStart="@drawable/ico_pass"
+        android:drawablePadding="10dp"
+        android:hint="Mật khẩu"
+        android:maxLines="1"
+        android:textColor="@color/black"
+        android:background="@drawable/btn_olive"
+        android:inputType="textPassword"
+        android:elevation="20dp"
+        android:autofillHints="password" />
+
+    <CheckBox
+        android:id="@+id/cb_LoginWithAdmin"
+        android:layout_width="match_parent"
+        android:layout_height="55dp"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginEnd="15dp"
+        android:drawableStart="@drawable/ico_qlnv"
+        android:drawablePadding="10dp"
+        android:paddingStart="13dp"
+        android:text="Đăng nhập bằng tài khoản quản trị"
+        android:textColor="@color/black" />
+
+    <Button
+        android:id="@+id/btn_Login"
+        android:layout_width="match_parent"
+        android:layout_height="55dp"
+        android:backgroundTint="@color/vang"
+        android:text="Đăng nhập"
+        android:textColor="@color/white"
+        android:layout_marginStart="15dp"
+        android:layout_marginEnd="15dp"
+        android:layout_marginTop="15dp"
+        android:elevation="20dp"/>
+
+</LinearLayout>
