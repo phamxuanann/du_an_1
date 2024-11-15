@@ -13,8 +13,8 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.abc_fpt.R;
 import com.example.abc_fpt.database.GioHangDao;
-import com.example.abc_fpt.modal.GioHang;
 import com.example.abc_fpt.fragment.GioHangActivity;
+import com.example.abc_fpt.modal.GioHang;
 
 
 import java.text.NumberFormat;

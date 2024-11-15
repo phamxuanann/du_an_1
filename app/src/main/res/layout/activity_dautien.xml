@@ -12,19 +12,36 @@
     android:gravity="center">
 
 
-    <ImageView
-        android:layout_width="match_parent"
-        android:layout_height="300dp"
-        android:src="@drawable/img"/>
     <TextView
-        android:layout_width="match_parent"
+
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="ABC FPT Shop"
-        android:textSize="40dp"
-        android:textAlignment="center"
-        android:textColor="#0C1B27"
+        android:text="FASHION"
+        android:letterSpacing="0.2"
+        android:fontFamily="cursive"
+        android:textSize="50sp"
         android:textStyle="bold"
-        android:layout_marginTop="30dp"/>
+        android:layout_gravity="center"
+        android:textColor="#F86638">
+    </TextView>
 
 
-  </LinearLayout>
+    <ImageView
+        android:id="@+id/ivLogo"
+        android:layout_width="300dp"
+        android:layout_height="390dp">
+    </ImageView>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Mang đến cho bạn những trải nghiệm \n mua sắm tiện lợi"
+        android:textSize="18sp"
+        android:layout_gravity="center"
+        android:textAlignment="center">
+    </TextView>
+
+
+
+
+</LinearLayout>

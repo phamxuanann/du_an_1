@@ -12,9 +12,9 @@ import androidx.appcompat.widget.Toolbar;
 import androidx.drawerlayout.widget.DrawerLayout;
 
 import com.example.abc_fpt.R;
+import com.example.abc_fpt.fragment.GioHangActivity;
 import com.example.abc_fpt.fragment.HomeStafffragment;
 import com.example.abc_fpt.fragment.Productfframent2;
-import com.example.abc_fpt.fragment.GioHangActivity;
 import com.google.android.material.navigation.NavigationView;
 
 public class MainActivity2 extends AppCompatActivity {
@@ -23,6 +23,7 @@ public class MainActivity2 extends AppCompatActivity {
     TextView tv_ToolbarStaff;
     FrameLayout frame_containerStaff;
     NavigationView nav_viewStaff;
+
     Productfframent2 productFragment2;
     GioHangActivity gioHangActivity;
 
@@ -72,7 +73,7 @@ public class MainActivity2 extends AppCompatActivity {
                 getSupportFragmentManager().beginTransaction().replace(R.id.frame_containerStaff,gioHangActivity).commit();
                 drawer_layoutStaff.closeDrawers();
                 img_ToolbarStaff.setImageResource(R.drawable.ico_qlsp);
-                tv_ToolbarStaff.setText("gio hang");
+                tv_ToolbarStaff.setText("Giỏ Hàng");
             }
 
             if (item.getItemId() == R.id.nav_changePassStaff) {

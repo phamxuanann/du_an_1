@@ -69,7 +69,7 @@ public class Onboading extends AppCompatActivity {
         List<Onboadingitem> list = new ArrayList<>();
 
         Onboadingitem item1 = new Onboadingitem();
-        item1.setImage(R.drawable.img);
+        item1.setImage(R.drawable.fashion);
         item1.setTitle("ABC FPT SHOP");
         item1.setDescription("Xin chào, rất vui được gặp bạn.");
 

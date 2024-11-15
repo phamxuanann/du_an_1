@@ -10,7 +10,7 @@
         android:layout_height="100dp"
         android:layout_margin="15dp"
         android:padding="5dp"
-        android:src="@drawable/img"
+        android:src="@drawable/fashion"
         android:layout_gravity="center"/>
 
 
