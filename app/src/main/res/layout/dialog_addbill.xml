@@ -47,6 +47,20 @@
                 tools:ignore="Autofill,HardcodedText,RtlSymmetry" />
 
             <EditText
+                android:id="@+id/edt_AdddateBill"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/btn_olive"
+                android:hint="date"
+                android:drawableStart="@drawable/ico_qlnv"
+                android:drawablePadding="10dp"
+                android:inputType="text"
+                android:maxLines="1"
+                android:paddingStart="13dp"
+                tools:ignore="Autofill,HardcodedText,RtlSymmetry" />
+
+            <EditText
                 android:id="@+id/edt_AddTableTimeBill"
                 android:layout_width="match_parent"
                 android:layout_height="50dp"

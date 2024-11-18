@@ -67,6 +67,7 @@ public class BillingFragment extends Fragment {
                 AlertDialog dialog = builder.create();
                 EditText edt_AddTableNameBill = view.findViewById(R.id.edt_AddTableNameBill);
                 EditText edt_AddHRBill = view.findViewById(R.id.edt_AddHRBill);
+                EditText edt_AdddateBill = view.findViewById(R.id.edt_AdddateBill);
                 EditText edt_AddTableTimeBill = view.findViewById(R.id.edt_AddTableTimeBill);
                 EditText edt_AddTableTotalBill = view.findViewById(R.id.edt_AddTableTotalBill);
                 Button btn_AddBill = view.findViewById(R.id.btn_AddBill);
@@ -76,12 +77,13 @@ public class BillingFragment extends Fragment {
                     public void onClick(View v) {
                         String idtable = edt_AddTableNameBill.getText().toString().trim();
                         String idhr = edt_AddHRBill.getText().toString().trim();
+                        String date = edt_AdddateBill.getText().toString().trim();
                         String time = edt_AddTableTimeBill.getText().toString().trim();
                         String total = edt_AddTableTotalBill.getText().toString().trim();
                         if (idtable.isEmpty() || idhr.isEmpty() || time.isEmpty() || total.isEmpty()) {
                             Toast.makeText(getContext(), "Please fill all fields", Toast.LENGTH_SHORT).show();
                         } else {
-                            Bill bill = new Bill(idtable, idhr, time, Integer.parseInt(total));
+                            Bill bill = new Bill(idtable, idhr, date, time, Integer.parseInt(total));
                             if (BillDAO.insert(bill)) {
                                 successSnkbar(layout, "Add bill successfully");
                                 list.clear();

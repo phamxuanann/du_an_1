@@ -68,7 +68,7 @@ public class Homefragment extends Fragment {
             public void onClick(View v) {
                 Fragment fragment = null;
                 FragmentManager fragmentManager = getFragmentManager();
-                fragmentManager.beginTransaction().replace(R.id.frame_container, new Productfframent2()).commit();
+                fragmentManager.beginTransaction().replace(R.id.frame_container, new ThongKeFragment()).commit();
             }
         });
 

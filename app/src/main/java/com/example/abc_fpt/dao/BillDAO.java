@@ -29,9 +29,10 @@ public class BillDAO {
             int id = cs.getInt(0);
             String idtable = cs.getString(1);
             String idhr = cs.getString(2);
-            String time = cs.getString(3);
-            int total = cs.getInt(4);
-            Bill bill = new Bill(id, idtable, idhr, time, total);
+            String date = cs.getString(3);
+            String time = cs.getString(4);
+            int total = cs.getInt(5);
+            Bill bill = new Bill(id, idtable, idhr, date, time, total);
             list.add(bill);
             cs.moveToNext();
         }
@@ -44,6 +45,7 @@ public class BillDAO {
         ContentValues values = new ContentValues();
         values.put("idtable", item.getIdtable());
         values.put("idhr", item.getIdhr());
+        values.put("date", item.getDate());
         values.put("time", item.getTime());
         values.put("total", item.getTotal());
         int row = (int) db.insert("BILL", null, values);
@@ -55,6 +57,7 @@ public class BillDAO {
         ContentValues values = new ContentValues();
         values.put("idtable", item.getIdtable());
         values.put("idhr", item.getIdhr());
+        values.put("date", item.getDate());
         values.put("time", item.getTime());
         values.put("total", item.getTotal());
         int row = db.update("BILL", values, "id=?", new String[]{String.valueOf(item.getId())});

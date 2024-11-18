@@ -4,8 +4,18 @@ public class Bill {
     private int id;
     private String idtable;
     private String idhr;
+    private String date;
     private String time;
     private int total;
+
+    public Bill(int id, String idtable, String idhr, String date, String time, int total) {
+        this.id = id;
+        this.idtable = idtable;
+        this.idhr = idhr;
+        this.date = date;
+        this.time = time;
+        this.total = total;
+    }
 
     public Bill(int id, String idtable, String idhr, String time, int total) {
         this.id = id;
@@ -15,11 +25,20 @@ public class Bill {
         this.total = total;
     }
 
-    public Bill(String idtable, String idhr, String time, int total) {
+    public Bill(String idtable, String idhr, String date, String time, int total) {
         this.idtable = idtable;
         this.idhr = idhr;
+        this.date = date;
         this.time = time;
         this.total = total;
+    }
+
+    public String getDate() {
+        return date;
+    }
+
+    public void setDate(String date) {
+        this.date = date;
     }
 
     public int getId() {

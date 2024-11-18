@@ -47,6 +47,7 @@ public class BillAdapter extends RecyclerView.Adapter<BillAdapter.BillViewHolder
         Bill item = list.get(position);
         holder.tv_idTableBill.setText(item.getIdtable());
         holder.tv_idHRBill.setText(item.getIdhr());
+        holder.tv_dateBill.setText(item.getDate());
         holder.tv_TimeBill.setText(item.getTime());
         holder.tv_TotalBill.setText(item.getTotal() + " VNĐ");
 
@@ -73,12 +74,14 @@ public class BillAdapter extends RecyclerView.Adapter<BillAdapter.BillViewHolder
 
                         EditText edt_AddTableNameBill = view.findViewById(R.id.edt_AddTableNameBill);
                         EditText edt_AddHRBill = view.findViewById(R.id.edt_AddHRBill);
+                        EditText edt_AdddateBill = view.findViewById(R.id.edt_AdddateBill);
                         EditText edt_AddTableTimeBill = view.findViewById(R.id.edt_AddTableTimeBill);
                         EditText edt_AddTableTotalBill = view.findViewById(R.id.edt_AddTableTotalBill);
                         Button btn_AddBill = view.findViewById(R.id.btn_AddBill);
 
                         edt_AddTableNameBill.setText(item.getIdtable());
                         edt_AddHRBill.setText(item.getIdhr());
+                        edt_AdddateBill.setText(item.getDate());
                         edt_AddTableTimeBill.setText(item.getTime());
                         edt_AddTableTotalBill.setText(item.getTotal() + "");
 
@@ -88,9 +91,10 @@ public class BillAdapter extends RecyclerView.Adapter<BillAdapter.BillViewHolder
                             public void onClick(View v) {
                                 String idtable = edt_AddTableNameBill.getText().toString();
                                 String idhr = edt_AddHRBill.getText().toString();
+                                String date = edt_AdddateBill.getText().toString();
                                 String time = edt_AddTableTimeBill.getText().toString();
                                 int total = Integer.parseInt(edt_AddTableTotalBill.getText().toString());
-                                Bill bill = new Bill(item.getId(), idtable, idhr, time, total);
+                                Bill bill = new Bill(item.getId(), idtable, idhr,date, time, total);
                                 if (BillDAO.update(bill)){
                                     list.clear();
                                     list.addAll(BillDAO.getAll());
@@ -166,12 +170,13 @@ public class BillAdapter extends RecyclerView.Adapter<BillAdapter.BillViewHolder
     }
 
     class BillViewHolder extends RecyclerView.ViewHolder{
-        TextView tv_idTableBill, tv_idHRBill, tv_TimeBill, tv_TotalBill;
+        TextView tv_idTableBill, tv_idHRBill, tv_TimeBill, tv_TotalBill, tv_dateBill;
         ImageView img_MoreFromBill;
         public BillViewHolder(@NonNull View itemView) {
             super(itemView);
             tv_idTableBill = itemView.findViewById(R.id.tv_idTableBill);
             tv_idHRBill = itemView.findViewById(R.id.tv_idHRBill);
+            tv_dateBill = itemView.findViewById(R.id.tv_dateBill);
             tv_TimeBill = itemView.findViewById(R.id.tv_TimeBill);
             tv_TotalBill = itemView.findViewById(R.id.tv_TotalBill);
             img_MoreFromBill = itemView.findViewById(R.id.img_MoreFromBill);

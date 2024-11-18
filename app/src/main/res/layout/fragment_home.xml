@@ -47,7 +47,7 @@
                 android:layout_marginLeft="10dp"
                 android:drawableTop="@drawable/store"
                 android:textSize="16sp"
-                android:text="Quản lý \n sản phẩm"
+                android:text="Quản lý \n Sản Phẩm"
                 app:backgroundTint="#F5F2FC"
                 android:background="@drawable/radius"
                 />

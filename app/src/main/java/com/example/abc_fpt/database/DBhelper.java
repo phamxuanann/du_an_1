@@ -45,13 +45,17 @@ public class DBhelper  extends SQLiteOpenHelper {
         sql = "INSERT INTO Khachhang VALUES (null, 'Pham xuân c C', '0123456789', 'Lâm Đồng', 'https://i.pinimg.com/originals/8d/a5/c3/8da5c3a06407303694d6381b23368f02.png')";
         db.execSQL(sql);
 
-        sql = "CREATE TABLE BILL (id integer primary key autoincrement, idtable text, idhr text, time text, total integer)";
+        sql = "CREATE TABLE BILL (id integer primary key autoincrement, idtable text, idhr text, date text, time text, total integer)";
         db.execSQL(sql);
-        sql = "INSERT INTO BILL VALUES (null, 'NÓN Màu dỏ', 'Pham xuan an', '1', 35000)";
+        sql = "INSERT INTO BILL VALUES (null, 'NÓN Màu đỏ', 'Pham xuan an', '23/11/2024', '1', 25000)";
         db.execSQL(sql);
-        sql = "INSERT INTO BILL VALUES (null, 'NÓN SIMON C', ' truong vu', '1', 35000)";
+        sql = "INSERT INTO BILL VALUES (null, 'NÓN SIMON C', ' truong vu', '22/11/2024', '1', 38000)";
         db.execSQL(sql);
-        sql = "INSERT INTO BILL VALUES (null, 'NÓN LOGO Chữ C', 'Phan hoang long', '1', 35000)";
+        sql = "INSERT INTO BILL VALUES (null, 'NÓN LOGO Chữ C', 'Phan hoang long', '29/10/2024', '1', 30000)";
+        db.execSQL(sql);
+        sql = "INSERT INTO BILL VALUES (null, 'NÓN Màu đỏ', 'Phan hoang ca', '26/11/2024', '1', 35000)";
+        db.execSQL(sql);
+        sql = "INSERT INTO BILL VALUES (null, 'NÓN LOGO Chữ C', 'Phan van kha', '28/12/2024', '1', 35000)";
         db.execSQL(sql);
 
         sql = "CREATE TABLE giohang(" +
