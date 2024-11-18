@@ -6,6 +6,8 @@ public class Product {
     private int price;
     private String image;
 
+    private int soluongdamua;
+
     public Product(int id, String name, int price, String image) {
         this.id = id;
         this.name = name;
@@ -17,6 +19,21 @@ public class Product {
         this.name = name;
         this.price = price;
         this.image = image;
+    }
+
+
+    public Product( String name, int soluongdamua) {
+        this.name = name;
+        this.soluongdamua = soluongdamua;
+    }
+
+
+    public int getSoluongdamua() {
+        return soluongdamua;
+    }
+
+    public void setSoluongdamua(int soluongdamua) {
+        this.soluongdamua = soluongdamua;
     }
 
     public int getId() {

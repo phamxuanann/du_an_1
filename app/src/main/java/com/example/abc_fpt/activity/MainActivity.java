@@ -17,6 +17,7 @@ import com.example.abc_fpt.fragment.Homefragment;
 import com.example.abc_fpt.fragment.KHFragment;
 import com.example.abc_fpt.fragment.Productfragment;
 import com.example.abc_fpt.fragment.ThongKeFragment;
+import com.example.abc_fpt.fragment.TopspFragment;
 import com.google.android.material.navigation.NavigationView;
 
 public class MainActivity extends AppCompatActivity {
@@ -31,6 +32,7 @@ public class MainActivity extends AppCompatActivity {
 
     Productfragment productFragment;
     ThongKeFragment thongKeFragment;
+    TopspFragment topspFragment;
 
 
     @Override
@@ -81,6 +83,12 @@ public class MainActivity extends AppCompatActivity {
                 drawer_layout.closeDrawers();
                 img_Toolbar.setImageResource(R.drawable.ico_qlnv);
                 tv_Toolbar.setText("Thống kê doanh thu");
+            } else if (item.getItemId() == R.id.nav_sphot) {
+                topspFragment = new TopspFragment();
+                getSupportFragmentManager().beginTransaction().replace(R.id.frame_container, topspFragment).commit();
+                drawer_layout.closeDrawers();
+                img_Toolbar.setImageResource(R.drawable.ico_qlnv);
+                tv_Toolbar.setText("SP HOT");
             } else if (item.getItemId() == R.id.nav_qlhd) {
                 billingFragment = new BillingFragment();
                 getSupportFragmentManager().beginTransaction().replace(R.id.frame_container, billingFragment).commit();

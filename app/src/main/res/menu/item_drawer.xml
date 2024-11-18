@@ -29,6 +29,10 @@
                     android:id="@+id/nav_thongke"
                     android:icon="@drawable/ic_bar"
                     android:title="Thống kê doanh thu"/>
+                <item
+                    android:id="@+id/nav_sphot"
+                    android:icon="@drawable/ic_bar"
+                    android:title="SP HOT"/>
             </menu>
         </item>
     </group>
