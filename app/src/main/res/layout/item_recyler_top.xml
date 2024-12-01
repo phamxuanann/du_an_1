@@ -21,6 +21,7 @@
             android:gravity="center"
             android:layout_gravity="center">
 
+
             <ImageView
                 android:id="@+id/img_top"
                 android:layout_width="50dp"

@@ -34,7 +34,7 @@ public class TopHOT extends RecyclerView.Adapter<TopHOT.ViewHolder>{
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         LayoutInflater inflater = ((Activity)context).getLayoutInflater();
-        View view = inflater.inflate(R.layout.item_recyler_top, parent, false);
+        View view = inflater.inflate(R.layout.item_sptop, parent, false);
 
         return new ViewHolder(view);
     }

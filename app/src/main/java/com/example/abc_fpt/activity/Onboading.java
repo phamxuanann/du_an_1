@@ -76,7 +76,7 @@ public class Onboading extends AppCompatActivity {
         Onboadingitem item2 = new Onboadingitem();
         item2.setImage(R.drawable.img_2);
         item2.setTitle("ABC FPT SHOP");
-        item2.setDescription(" Ở đây có rất nhiều loại máy tính");
+        item2.setDescription(" Ở đây có rất nhiều sản phẩm");
 
         Onboadingitem item3 = new Onboadingitem();
         item3.setImage(R.drawable.img_2);
