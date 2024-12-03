@@ -2,6 +2,7 @@ package com.example.abc_fpt.activity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -46,7 +47,7 @@ public class MainActivity2 extends AppCompatActivity {
         productFragment2 = new Productfframent2();
         homeStaffFragment = new HomeStafffragment();
 
-        getSupportFragmentManager().beginTransaction().replace(R.id.frame_containerStaff, homeStaffFragment).commit();
+        getSupportFragmentManager().beginTransaction().replace(R.id.frame_containerStaff, productFragment2).commit();
         setSupportActionBar(toolbarStaff);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setTitle("");
@@ -57,34 +58,39 @@ public class MainActivity2 extends AppCompatActivity {
         drawer_layoutStaff.addDrawerListener(toggle);
 
         nav_viewStaff.setNavigationItemSelectedListener(item -> {
-            if (item.getItemId() == R.id.nav_HomeStaff) {
-                getSupportFragmentManager().beginTransaction().replace(R.id.frame_containerStaff,homeStaffFragment).commit();
-                drawer_layoutStaff.closeDrawers();
+            int id = item.getItemId();
+
+            if (id == R.id.nav_HomeStaff) {
+                getSupportFragmentManager().beginTransaction()
+                        .replace(R.id.frame_containerStaff, homeStaffFragment)
+                        .commit();
                 img_ToolbarStaff.setImageResource(R.drawable.ico_home);
                 tv_ToolbarStaff.setText("Trang chủ");
-            }
-            if (item.getItemId() == R.id.nav_qlspStaff) {
-                getSupportFragmentManager().beginTransaction().replace(R.id.frame_containerStaff,productFragment2).commit();
-                drawer_layoutStaff.closeDrawers();
+            } else if (id == R.id.nav_qlspStaff) {
+                getSupportFragmentManager().beginTransaction()
+                        .replace(R.id.frame_containerStaff, productFragment2)
+                        .commit();
                 img_ToolbarStaff.setImageResource(R.drawable.ico_qlsp);
                 tv_ToolbarStaff.setText("Sản phẩm");
-            }
-            if (item.getItemId() == R.id.nav_qlbanStaff) {
-                getSupportFragmentManager().beginTransaction().replace(R.id.frame_containerStaff,gioHangActivity).commit();
-                drawer_layoutStaff.closeDrawers();
+            } else if (id == R.id.nav_qlbanStaff) {
+                getSupportFragmentManager().beginTransaction()
+                        .replace(R.id.frame_containerStaff, gioHangActivity)
+                        .commit();
                 img_ToolbarStaff.setImageResource(R.drawable.ico_qlsp);
                 tv_ToolbarStaff.setText("Giỏ Hàng");
-            }
-
-            if (item.getItemId() == R.id.nav_changePassStaff) {
+            } else if (id == R.id.nav_changePassStaff) {
                 Intent intent = new Intent(MainActivity2.this, ChagePasword.class);
                 startActivity(intent);
-            }
-            if (item.getItemId() == R.id.nav_LogoutStaff) {
+            } else if (id == R.id.nav_LogoutStaff) {
                 finish();
             }
+
+            drawer_layoutStaff.closeDrawers();
             return true;
         });
+
+
+
     }
 }
 

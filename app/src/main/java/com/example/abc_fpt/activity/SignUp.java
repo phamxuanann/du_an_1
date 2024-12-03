@@ -44,7 +44,7 @@ public class SignUp extends AppCompatActivity {
             String password = edt_SignUpPassword.getText().toString();
             String repassword = edt_SignUpConfirmPassword.getText().toString();
             if (username.isEmpty() || password.isEmpty() || repassword.isEmpty()) {
-                errorSnkbar(layout, "Vui lòng điền đầy đủ thông tin");
+                errorSnkbar(layout, "Vui lòng điền đầ đủ thông tin");
             } else if (password.length() < 8) {
                 errorSnkbar(layout, "Mật khẩu phải có ít nhất 8 kí tự");
             } else if (!password.matches(".*[a-z].*")) {

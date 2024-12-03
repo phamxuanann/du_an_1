@@ -51,6 +51,15 @@ public class GioHangActivity extends Fragment {
         GioHangAdapter adapter = new GioHangAdapter(getContext(), list);
         recyclerView.setAdapter(adapter);
 
+        // Khởi tạo DAO và lấy danh sách giỏ hàng
+        gioHangDao = new GioHangDao(getContext());
+        list = gioHangDao.getAll();
+
+        // Truyền danh sách vào Adapter
+        gioHangAdapter = new GioHangAdapter(getContext(), list);
+        recyclerView.setAdapter(gioHangAdapter);
+
+
 
         //getAll list
         list.clear();
