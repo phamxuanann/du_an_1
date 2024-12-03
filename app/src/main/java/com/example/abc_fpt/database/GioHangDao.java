@@ -4,6 +4,7 @@ import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
+import android.util.Log;
 
 import com.example.abc_fpt.fragment.GioHangActivity;
 import com.example.abc_fpt.modal.GioHang;
@@ -43,42 +44,55 @@ public class GioHangDao {
     }
 
     public GioHang getGioHang(int id) {
-        Cursor cs = db.rawQuery("SELECT * FROM giohang WHERE idSanPham ='" + id + "'", null);
-        cs.moveToFirst();
-        Integer idSanPham = cs.getInt(0);
-        String tenSanPham = cs.getString(1);
-        String moTa = cs.getString(2);
-        String giaSanPham = cs.getString(3);
-        String loaiSanPham = cs.getString(4);
-        Integer image = cs.getInt(5);
-        Integer soLuong = cs.getInt(6);
-        GioHang gioHang = new GioHang(idSanPham, tenSanPham, moTa, giaSanPham, loaiSanPham, image, soLuong);
+        Log.d("GioHangDao", "idSanPham: " + id);
+        Cursor cs = db.rawQuery("SELECT * FROM giohang WHERE idSanPham = ?", new String[]{String.valueOf(id)});
+        if (cs.moveToFirst()) {
+            Integer idSanPham = cs.getInt(0);
+            String tenSanPham = cs.getString(1);
+            String moTa = cs.getString(2);
+            String giaSanPham = cs.getString(3);
+            String loaiSanPham = cs.getString(4);
+            Integer image = cs.getInt(5);
+            Integer soLuong = cs.getInt(6);
+            cs.close();
+            return new GioHang(idSanPham, tenSanPham, moTa, giaSanPham, loaiSanPham, image, soLuong);
+        }
         cs.close();
-        return gioHang;
+        return null;
     }
 
     //Thêm
     public boolean them(GioHang gioHang) {
-        ContentValues contentValues = new ContentValues();
-        contentValues.put("idSanPham", gioHang.getIdSanPham());
-        contentValues.put("tenSanPham", gioHang.getTenSanPham());
-        contentValues.put("moTa", gioHang.getMoTa());
-        contentValues.put("giaSanPham", gioHang.getGiaSanPham());
-        contentValues.put("loaiSanPham", gioHang.getLoaiSanPham());
-        contentValues.put("image", gioHang.getImage());
-        contentValues.put("soLuong", gioHang.getSoLuong());
-        long r = db.insert("giohang", null, contentValues);
-        if (r <= 0) {
-            return false;
+        GioHang existingGioHang = getGioHang(gioHang.getIdSanPham());
+        if (existingGioHang != null) {
+            themSoluong(gioHang);
+            return true;
+        } else {
+            ContentValues contentValues = new ContentValues();
+            contentValues.put("idSanPham", gioHang.getIdSanPham());
+            contentValues.put("tenSanPham", gioHang.getTenSanPham());
+            contentValues.put("moTa", gioHang.getMoTa());
+            contentValues.put("giaSanPham", gioHang.getGiaSanPham());
+            contentValues.put("loaiSanPham", gioHang.getLoaiSanPham());
+            contentValues.put("image", gioHang.getImage());
+            contentValues.put("soLuong", gioHang.getSoLuong());
+            long r = db.insert("giohang", null, contentValues);
+            return r != -1;
         }
-        return true;
     }
 
+
     public void themSoluong(GioHang gioHang) {
-        ContentValues contentValues = new ContentValues();
-        contentValues.put("soLuong", gioHang.getSoLuong() + 1);
-        db.update("giohang", contentValues, "idSanPham=?", new String[]{String.valueOf(gioHang.getIdSanPham())});
+        GioHang existingGioHang = getGioHang(gioHang.getIdSanPham());
+        if (existingGioHang != null) {
+            int newQuantity = existingGioHang.getSoLuong() + gioHang.getSoLuong();
+            ContentValues contentValues = new ContentValues();
+            contentValues.put("soLuong", newQuantity);
+            db.update("giohang", contentValues, "idSanPham=?", new String[]{String.valueOf(gioHang.getIdSanPham())});
+        }
     }
+
+
 
     //Xóa
     public boolean xoa(GioHang gioHang) {

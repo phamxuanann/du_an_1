@@ -63,6 +63,17 @@ public class Productapdapter extends RecyclerView.Adapter<Productapdapter.Produc
                 list.get(position).getImage().startsWith("https://")){
             Picasso.get().load(list.get(position).getImage()).into(holder.img_Product);
         }
+
+        // Chi tiết sp
+        holder.itemView.setOnClickListener(v -> {
+            Intent intent = new Intent(context, ChitietProduct.class);
+            intent.putExtra("id", item.getId());
+            intent.putExtra("name", item.getName());
+            intent.putExtra("price", item.getPrice());
+            intent.putExtra("image", item.getImage());
+            context.startActivity(intent);
+        });
+
         holder.img_MoreFromProduct.setOnClickListener(v -> {
             AlertDialog.Builder builder = new AlertDialog.Builder(context);
             View view = LayoutInflater.from(context).inflate(R.layout.dialog_more, null);
